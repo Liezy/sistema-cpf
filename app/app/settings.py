@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #apps
-    'eventos'
+    'eventos',
+
+    #bibliotecas
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
