@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="mt-4">inscrição no Evento: {{ evento.nome }}</h2>
+    <form id="checkinForm" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" class="form-control" id="cpf" name="cpf" required>
+        </div>
+        <button type="submit" class="btn btn-success">Registrar Presença</button>
+    </form>
+    <div id="mensagem"></div>
+</div>
+
+{% endblock %}
