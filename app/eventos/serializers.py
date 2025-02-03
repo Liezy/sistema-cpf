@@ -1,17 +1,17 @@
 from rest_framework import serializers
-from .models import ServidorModel, EventoModel, PresencaModel
+from .models import Servidor, Evento, Presenca
 
 class ServidorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ServidorModel
+        model = Servidor
         fields = '__all__'
 
 class EventoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = EventoModel
+        model = Evento
         fields = '__all__'
 
 class PresencaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PresencaModel
+        model = Presenca
         fields = '__all__'
