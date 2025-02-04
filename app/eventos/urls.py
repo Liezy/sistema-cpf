@@ -11,4 +11,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path("lista/", views.lista_eventos, name="lista_eventos"),
     path('checkin/<int:evento_id>/', views.checkin_evento, name='checkin_evento'),
+    path('relatorio/<int:evento_id>/', views.relatorio_presenca, name='relatorio_presenca'),
+    path('exportar/<int:evento_id>/', views.exportar_presenca, name='exportar_presenca'),
 ]

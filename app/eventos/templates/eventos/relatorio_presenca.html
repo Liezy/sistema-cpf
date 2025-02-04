@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Relatório de Presença para {{ evento.nome }}</h2>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Servidor</th>
+                <th>Data e Hora</th>
+                <th>Sincronizado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for presenca in presencas %}
+            <tr>
+                <td>{{ presenca.servidor.nome }}</td>
+                <td>{{ presenca.data_hora }}</td>
+                <td>{{ presenca.sincronizado|yesno:"Sim,Não" }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="mb-4">
+        <a href="{% url 'exportar_presenca' evento.id %}" class="btn btn-success">Exportar para CSV</a>
+    </div>
+    
+</div>
+{% endblock %}
